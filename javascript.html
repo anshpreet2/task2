@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>JavaScript Concepts</title>
+    <style>
+        body{
+            background-color: rgb(156, 127, 194);
+            text-align:center;
+        }
+    </style>
+    <script>
+        function demonstrateStringMethods() {
+            var inputString = document.getElementById("stringInput").value;
+
+            var length = inputString.length;
+            var uppercase = inputString.toUpperCase();
+            var lowercase = inputString.toLowerCase();
+            var trimmed = inputString.trim();
+            var replaced = inputString.replace("uni", "university");
+
+            document.getElementById("stringLengthResult").innerHTML = "Length of string: " + length;
+            document.getElementById("stringUppercaseResult").innerHTML = "Uppercase: " + uppercase;
+            document.getElementById("stringLowercaseResult").innerHTML = "Lowercase: " + lowercase;
+            document.getElementById("stringTrimmedResult").innerHTML = "Trimmed: " + trimmed;
+            document.getElementById("stringReplacedResult").innerHTML = "Replaced: " + replaced;
+        }
+
+        function demonstrateNumberMethods() {
+            var inputNumber = parseFloat(document.getElementById("numberInput").value);
+
+            var absolute = Math.abs(inputNumber);
+            var squareRoot = Math.sqrt(inputNumber);
+            var rounded = Math.round(inputNumber);
+            var random = Math.random() * inputNumber;
+
+            document.getElementById("numberAbsoluteResult").innerHTML = "Absolute value: " + absolute;
+            document.getElementById("numberSquareRootResult").innerHTML = "Square root: " + squareRoot;
+            document.getElementById("numberRoundedResult").innerHTML = "Rounded value: " + rounded;
+            document.getElementById("numberRandomResult").innerHTML = "Random value (0-" + inputNumber + "): " + random;
+        }
+
+        function demonstrateArrayMethods() {
+            var inputArray = document.getElementById("arrayInput").value.split(",");
+
+            var length = inputArray.length;
+            var joined = inputArray.join(" - ");
+            var sorted = inputArray.slice().sort();
+            var reversed = inputArray.slice().reverse();
+            var includesWorld = inputArray.includes("uni");
+
+            document.getElementById("arrayLengthResult").innerHTML = "Array length: " + length;
+            document.getElementById("arrayJoinedResult").innerHTML = "Joined array: " + joined;
+            document.getElementById("arraySortedResult").innerHTML = "Sorted array: " + sorted;
+            document.getElementById("arrayReversedResult").innerHTML = "Reversed array: " + reversed;
+            document.getElementById("arrayIncludesResult").innerHTML = "Includes 'world': " + includesWorld;
+        }
+
+        function demonstrateDateMethods() {
+            var currentDate = new Date();
+
+            var year = currentDate.getFullYear();
+            var month = currentDate.getMonth() + 1;
+            var day = currentDate.getDate();
+            var hours = currentDate.getHours();
+            var minutes = currentDate.getMinutes();
+
+            document.getElementById("dateYearResult").innerHTML = "Year: " + year;
+            document.getElementById("dateMonthResult").innerHTML = "Month: " + month;
+            document.getElementById("dateDayResult").innerHTML = "Day: " + day;
+            document.getElementById("dateTimeResult").innerHTML = "Time: " + hours + ":" + minutes;
+        }
+
+        function demonstrateFunctionMethods() {
+            var functionResult = document.getElementById("functionResult");
+
+            // Example of a simple custom function
+            function greet(name) {
+                return "Hello, " + name + "!";
+            }
+
+            // Call the greet function and display the result
+            functionResult.innerHTML = greet("anshpreet");
+        }
+    </script>
+</head>
+<body>
+    <h1>JavaScript Concepts</h1>
+
+    <!-- String methods -->
+    <h2>String methods</h2>
+    <p>Enter a string: <input type="text" id="stringInput"></p>
+    <button onclick="demonstrateStringMethods()">Show String Results</button>
+    <p id="stringLengthResult"></p>
+    <p id="stringUppercaseResult"></p>
+    <p id="stringLowercaseResult"></p>
+    <p id="stringTrimmedResult"></p>
+    <p id="stringReplacedResult"></p>
+
+    <!-- Number methods -->
+    <h2>Number methods</h2>
+    <p>Enter a number: <input type="number" id="numberInput"></p>
+    <button onclick="demonstrateNumberMethods()">Show Number Results</button>
+    <p id="numberAbsoluteResult"></p>
+    <p id="numberSquareRootResult"></p>
+    <p id="numberRoundedResult"></p>
+    <p id="numberRandomResult"></p>
+
+    <!-- Array methods -->
+    <h2>Array methods</h2>
+    <p>Enter an array (comma-separated): <input type="text" id="arrayInput"></p>
+    <button onclick="demonstrateArrayMethods()">Show Array Results</button>
+    <p id="arrayLengthResult"></p>
+    <p id="arrayJoinedResult"></p>
+    <p id="arraySortedResult"></p>
+    <p id="arrayReversedResult"></p>
+    <p id="arrayIncludesResult"></p>
+
+    <!-- Date methods -->
+    <h2>Date methods</h2>
+    <button onclick="demonstrateDateMethods()">Show Date Results</button>
+    <p id="dateYearResult"></p>
+    <p id="dateMonthResult"></p>
+    <p id="dateDayResult"></p>
+    <p id="dateTimeResult"></p>
+
+    <!-- Function methods -->
+    <h2>Function methods</h2>
+    <button onclick="demonstrateFunctionMethods()">Show Function Result</button>
+    <p id="functionResult"></p>
+</body>
+</html>
